@@ -7,7 +7,7 @@ import {
   TOKEN_CONTRACT_ADDRESS,
 } from "../constants";
 
-export const getEtherBalance = async (provider, address, contract = fasle) => {
+export const getEtherBalance = async (provider, address, contract = false) => {
   try {
     if (contract) {
       const balance = await provider.getBalance(EXCHANGE_CONTRACT_ADDRESS);
@@ -50,7 +50,7 @@ export const getLPTokensBalance = async (provider, address) => {
   }
 };
 
-export const getReserveCDTokens = async (provider) => {
+export const getReserveOfCDTokens = async (provider) => {
   try {
     const exchangeContract = new Contract(
       EXCHANGE_CONTRACT_ADDRESS,
